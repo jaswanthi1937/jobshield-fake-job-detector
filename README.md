@@ -1,86 +1,119 @@
+# 🛡️ JobShield — Fake Job Posting Detector
 
-# JobShield — Fake Job Posting Detector
+An AI/ML-powered web application that analyzes job postings and identifies patterns associated with potentially fraudulent listings. JobShield provides a model-generated fraud score and practical safety guidance to help users evaluate job opportunities.
 
-JobShield is a machine-learning application that screens job postings for patterns associated with fraudulent listings. Users can enter job details and receive a model prediction and estimated fraud score through a Streamlit interface.
+🌐 **Live Demo:** [Try JobShield](https://jobshield-fake-job-detector.streamlit.app/)
 
-## Features
+💻 **GitHub Repository:** [View Source Code](https://github.com/jaswanthi1937/jobshield-fake-job-detector)
 
-- Analyze job titles and descriptions
-- Include optional company profiles, requirements, and benefits
-- Display a fraud score and model classification
-- Provide practical job-verification guidance
-- Simple, interactive Streamlit interface
+## ✨ Features
 
-## Technologies Used
+- Analyze job titles and descriptions.
+- Include company names and company profiles.
+- Evaluate job requirements and benefits.
+- Display a model-generated fraud score and classification.
+- Highlight common job scam warning signs.
+- Provide practical job verification guidance.
+- Interactive web interface built with Streamlit.
 
-- Python
-- Pandas
-- Scikit-learn
-- TF-IDF text vectorization
-- Logistic Regression
-- Streamlit
-- Joblib
+## 🧰 Technologies Used
 
-## Project Structure
+- **Python** — application development
+- **Pandas** — data handling and preprocessing
+- **Scikit-learn** — machine learning
+- **TF-IDF Vectorization** — text feature extraction
+- **Logistic Regression** — classification model
+- **Streamlit** — interactive web application
+- **Joblib** — model serialization and loading
 
-    fake-job/
-    ├── data/
-    │   └── fake_job_postings.csv
-    ├── models/
-    │   └── fraud_detector.joblib
-    ├── app.py
-    ├── train_model.py
-    ├── check_data.py
-    ├── requirements.txt
-    ├── .gitignore
-    └── README.md
+## ⚙️ How It Works
 
-## Getting Started
+1. **Input:** The user enters available job posting details.
+2. **Preprocessing:** The text is prepared for machine learning.
+3. **Feature extraction:** TF-IDF converts text into numerical features.
+4. **Prediction:** A trained Logistic Regression model analyzes the features.
+5. **Results:** The application displays an estimated fraud score and classification.
+6. **Verification:** The user receives practical safety guidance before applying.
+
+## 🏗️ Project Structure
+
+```text
+jobshield-fake-job-detector/
+├── app.py
+├── train_model.py
+├── check_data.py
+├── requirements.txt
+├── README.md
+├── data/
+│   └── fake_job_postings.csv
+└── models/
+    └── fraud_detector.joblib
+```
+
+## 🚀 Run Locally
 
 ### 1. Clone the repository
 
-    git clone YOUR_GITHUB_REPOSITORY_URL
-    cd fake-job
+```bash
+git clone https://github.com/jaswanthi1937/jobshield-fake-job-detector.git
+cd jobshield-fake-job-detector
+```
 
-### 2. Create a virtual environment
+### 2. Create and activate a virtual environment
 
-    python -m venv .venv
+**Windows:**
 
-### 3. Activate the environment on Windows
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
 
-    .venv\Scripts\activate
+### 3. Install dependencies
 
-### 4. Install dependencies
+```bash
+pip install -r requirements.txt
+```
 
-    pip install -r requirements.txt
+### 4. Launch the application
 
-### 5. Train the model
+```bash
+streamlit run app.py
+```
 
-    python train_model.py
+Open the local URL displayed in your terminal.
 
-### 6. Launch the application
+## 📊 Model Evaluation
 
-    python -m streamlit run app.py
+The model was trained on a fake job postings dataset using TF-IDF text features and Logistic Regression.
 
-Open the local URL shown in your terminal.
+Model evaluation should consider:
 
-## Model Evaluation
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion matrix
 
-The model training script reports evaluation metrics, including accuracy, precision, recall, F1-score, and a confusion matrix.
+These metrics help evaluate how well the classifier distinguishes fraudulent postings from legitimate ones. Accuracy alone may not reflect performance on an imbalanced dataset.
 
-Actual performance depends on the dataset, train/test split, and model configuration. Review the evaluation results before making performance claims.
+## 🔒 Limitations and Responsible Use
 
-## Limitations
+- A low fraud score does not guarantee that a job posting is genuine.
+- A high score does not prove that a posting is fraudulent.
+- Predictions depend on the training data and the information entered.
+- Always verify employers through official websites and trusted contact details.
+- Never pay upfront recruitment fees or share sensitive information with unverified recruiters.
 
-- Predictions can be incorrect.
-- The fraud score is a model estimate, not a verified probability that a posting is fraudulent.
-- JobShield does not independently verify companies or job offers.
-- Always check employers through official sources.
+**JobShield is an educational screening aid, not a guarantee of job legitimacy.**
 
-## Disclaimer
+## 👩‍💻 Author
 
-This project is an educational machine-learning screening tool. It should not be used as the sole basis for deciding whether a job offer is genuine.
+**Jaswanthi N.**
 
-## Author
+B.Tech — Computer Science and Engineering (AI/ML)
 
-Jaswanthi N
+Interested in Artificial Intelligence, Machine Learning, and building practical AI-powered applications.
+
+---
+
+⭐ If you find this project interesting, feel free to explore the repository and try the live demo.
