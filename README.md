@@ -84,17 +84,43 @@ Open the local URL displayed in your terminal.
 
 ## 📊 Model Evaluation
 
-The model was trained on a fake job postings dataset using TF-IDF text features and Logistic Regression.
+JobShield uses TF-IDF text features and a Logistic Regression classifier to identify potentially fraudulent job postings.
 
-Model evaluation should consider:
+### Performance Metrics
 
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- Confusion matrix
+Evaluation on the test set produced the following results:
 
-These metrics help evaluate how well the classifier distinguishes fraudulent postings from legitimate ones. Accuracy alone may not reflect performance on an imbalanced dataset.
+| Metric | Score |
+|---|---:|
+| Accuracy | 98.63% |
+| Precision (Fraud) | 82.63% |
+| Recall (Fraud) | 90.75% |
+| F1-score (Fraud) | 86.50% |
+
+### Confusion Matrix
+
+The confusion matrix contains 3,576 test samples.
+
+| | Predicted Legitimate | Predicted Fraud |
+|---|---:|---:|
+| Actual Legitimate | 3,370 | 33 |
+| Actual Fraud | 16 | 157 |
+
+- **True Negatives (TN):** 3,370
+- **False Positives (FP):** 33
+- **False Negatives (FN):** 16
+- **True Positives (TP):** 157
+
+### Interpretation
+
+- **Accuracy:** 98.63% of test predictions were correct.
+- **Precision:** 82.63% of postings predicted as fraudulent were actually fraudulent.
+- **Recall:** 90.75% of fraudulent postings in the test set were detected.
+- **F1-score:** 86.50%, balancing precision and recall.
+
+Accuracy should be interpreted alongside precision and recall, especially when the dataset contains more legitimate postings than fraudulent postings.
+
+*Note: These figures assume the confusion matrix uses the class order `[legitimate, fraud]` for both actual and predicted labels. Results reflect the test dataset and do not guarantee performance on new job postings.*
 
 ## 🔒 Limitations and Responsible Use
 
